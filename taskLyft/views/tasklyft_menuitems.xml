@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Root menu item with application attribute -->
+    <menuitem id="task_lyft_root_menu" name="TaskLyft" groups="base.group_system"/>
+
+    <!-- Child menu item -->
+    <menuitem id="task_lyft_request_menu" name="Service Requests" parent="task_lyft_root_menu" action="task_lyft_action_request"/>
+</odoo>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="tasklyft_homepage" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <link rel="stylesheet" type="text/css" href="/task_lyft/static/src/css/home.css"/>
+    
+            <div class="main">
+                <!-- Hero Section -->
+                <section id="hero" class="hero section dark-background">
+                    <div class="container">
+                        <div class="row gy-4">
+                            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center zoom-out" data-animation="zoom-out">
+                                <h1>TaskLyft: Educators at Your Fingertips</h1>
+                                <p>Discover and connect with top educators quickly and effortlessly.</p>
+                                <t t-if="not request.session.uid">
+                                    <div class="d-flex">
+                                        <a href="/web/login" class="btn-get-started">Get Started</a>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 hero-img zoom-out" data-animation="zoom-out" data-animation-delay="200">
+                                <img src="task_lyft/static/src/img/hero-img.png" class="img-fluid animated" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /Hero Section -->
+                
+                <!-- About Section -->
+                <section id="about" class="about section color">
+                    <img src="task_lyft/static/src/img/cta-bg.jpg" alt=""></img>
+                    <!-- Section Title -->
+                    <div class="container section-title color  fade-up" data-animation="fade-up">
+                        <h2>About Us</h2>
+                    </div><!-- End Section Title -->
+                
+                    <div class="container">
+                        <div class="row gy-4 color">
+                            <div class="col-lg-6 content fade-up " data-animation="fade-up" data-animation-delay="100">
+                                <p>
+                                    We revolutionize education by connecting top educators with transformative opportunities, creating a platform that fosters impactful learning experiences and drives educational advancement.
+                                </p>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> <span>1- Connect with top-tier educators who align with your specific learning needs and goals.</span></li>
+                                    <li><i class="bi bi-check2-circle"></i> <span>2- Enjoy a seamless experience with our user-friendly tools designed for effortless teaching and learning.</span></li>
+                                    <li><i class="bi bi-check2-circle"></i> <span>3- Access resources and support that drive educational growth and success.</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 fade-up " data-animation="fade-up" data-animation-delay="200">
+                                <p>At TaskLyft, we're more than just an educational platform—we're a community dedicated to connecting passionate educators with opportunities that help them thrive. Founded with the mission to empower both educators and learners, TaskLyft provides a dynamic marketplace where knowledge meets opportunity. </p>
+                                <a href="/Services" class="read-more"><span>View Services</span><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /About Section -->
+                
+                <!-- Why Us Section -->
+                <section id="why-us" class="section why-us light-background" data-builder="section">
+                    <div class="container-fluid">
+                        <div class="row gy-4">
+                            <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+                                <div class="content px-xl-5  fade-up" data-animation="fade-up" data-animation-delay="100">
+                                    <h3><span>Streamline Your Experience On</span>
+                                        <strong> Task Lyft</strong></h3>
+                                    <p>
+                                        Effortlessly manage your learning journey from start to finish with clear steps and expert educators.
+                                    </p>
+                                </div>
+                                <div class="faq-container px-xl-5  fade-up" data-animation="fade-up" data-animation-delay="200">
+                                    <div class="faq-item faq-active">
+                                        <h3><span>01</span> Define Your Learning Goals</h3>
+                                        <div class="faq-content">
+                                            <p>Clearly outline your learning objectives and requirements. This helps in finding the right educator who can deliver the knowledge and guidance you’re seeking.</p>
+                                        </div>
+                                        <i class="faq-toggle bi bi-chevron-right"></i>
+                                    </div><!-- End Faq item-->
+                                    <div class="faq-item  faq-active">
+                                        <h3><span>02</span> Choose the Right Talent</h3>
+                                        <div class="faq-content">
+                                            <p>Browse through profiles and portfolios to select an educator whose expertise and teaching style align with your learning needs. Ensure they have a proven track record of delivering effective instruction.</p>
+                                        </div>
+                                        <i class="faq-toggle bi bi-chevron-right"></i>
+                                    </div><!-- End Faq item-->
+                                    <div class="faq-item  faq-active">
+                                        <h3><span>03</span>Collaborate and Review</h3>
+                                        <div class="faq-content ">
+                                            <p>Communicate effectively with your educator to ensure your learning goals are understood. Regularly review your progress and provide feedback to ensure the educational experience meets your expectations.</p>
+                                        </div>
+                                        <i class="faq-toggle bi bi-chevron-right"></i>
+                                    </div><!-- End Faq item-->
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+                                <img src="task_lyft/static/src/img/why-us.png" class="img-fluid" alt="" data-animation="zoom-in" data-animation-delay="100"/>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /Why Us Section -->
+            </div>
+        </xpath>
+    </template>
+    
+</odoo>

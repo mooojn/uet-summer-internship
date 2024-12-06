@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- quiz view main action -->
+    <record id="action_quiz" model="ir.actions.act_window">
+        <field name="name">Quiz</field>
+        <field name="res_model">ustadam.quiz</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_quiz_tree1"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You can start an existing quiz from here.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_open_related_question" model="ir.actions.act_window">
+        <field name="name">Questions to attempt</field>
+        <field name="res_model">ustadam.question</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'default_quiz_id': active_id}</field>
+        <field name="domain">[('quiz_id', '=', context.get('default_quiz_id'))]</field>
+    </record>
+
+    <!-- Define the action for opening related options -->
+    <record id="action_open_related_option" model="ir.actions.act_window">
+        <field name="name">Options</field>
+        <field name="res_model">ustadam.option</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('option_id', '=', context.get('default_question_id'))]</field>
+        <field name="context">{'default_question_id': active_id}</field>
+        <field name="target">new</field>
+    </record>
+
+    
+
+</odoo>

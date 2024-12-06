@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="tasklyft_footer" inherit_id="website.layout">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="o_footer">
+                
+                <div class="container" style="margin-top: 20px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/task_lyft/static/src/img/logobgless.png" width="95" height="40" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Contact</h5>
+                            <p>tasklyft@gmail.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Follow Us</h5>
+                            <p>
+                                <a style="text-decoration:none;color:white;"
+                                   href="#"
+                                   onmouseover="this.style.color='lightblue';"
+                                   onmouseout="this.style.color='white';">Facebook</a> | 
+                                <a style="text-decoration:none;color:white;"
+                                   href="#"
+                                   onmouseover="this.style.color='lightblue';"
+                                   onmouseout="this.style.color='white';">Twitter</a> | 
+                                <a style="text-decoration:none;color:white;"
+                                   href="#"
+                                   onmouseover="this.style.color='lightblue';"
+                                   onmouseout="this.style.color='white';">Instagram</a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    
+    <template id="tasklyft_baseline" inherit_id="website.layout">
+    <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+        <span class="o_footer_copyright_name me-2">Copyright &amp;copy; TaskLyft</span>
+    </xpath>
+</template>
+</odoo>

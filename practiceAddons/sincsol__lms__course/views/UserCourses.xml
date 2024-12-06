@@ -1,0 +1,74 @@
+<odoo>
+    <!-- Define Kanban View for Course -->
+    <record id="view_course_kanban" model="ir.ui.view">
+        <field name="name">Course Kanban View</field>
+        <field name="model">ustadam.course</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record_has_image_fill">
+                            <div class="o_kanban_image">
+                                <field name="img" widget="image"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_title">
+                                    <field name="name"/>
+                                </div>
+                                <div class="o_kanban_description">
+                                    <field name="description"/>
+                                </div>
+                                <div>
+                                    <button type="object" name="action_register_course" class="btn btn-primary">
+                                        Register
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="view_content" model="ir.actions.act_window">
+        <field name="name">Course Content</field>
+        <field name="res_model">ustadam.course_content</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Define action for course Kanban view -->
+    <record id="action_course_kanban" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">ustadam.course</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="view_course_kanban"/>
+    </record>
+
+
+
+    <record id="view_course_kanban_inherited" model="ir.ui.view">
+                <field name="name">Course Kanban View Inherited</field>
+                <field name="model">ustadam.course</field>
+                <field name="inherit_id" ref="sincsol__lms__course.view_course_kanban"/> <!-- Replace 'module_name' with the actual module name where original view is defined -->
+
+                    <field name="arch" type="xml">
+                        <data>
+                            <xpath expr="//button[@name='action_register_course']" position="replace">
+                                <button type="object" name="action_view_content" class="btn btn-secondary">
+                                    View Content (Modified)
+                                </button>
+                            </xpath>
+                        </data>
+                    </field>
+        </record>
+
+    <!-- Define action for course Kanban view -->
+    <record id="action_course_kanban_1" model="ir.actions.act_window">
+        <field name="name">My Courses</field>
+        <field name="res_model">ustadam.course</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="view_course_kanban_inherited"/>
+    </record>
+     <!-- Define action for course Kanban view -->
+
+</odoo>

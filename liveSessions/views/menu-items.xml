@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="live_session_root_menu"
+        name="Live Session"
+        action="test_action"
+        groups="live_sessions.group_teacher"
+    />
+
+    <record id="live_session_root_menu" model="ir.ui.menu">
+        <field name="name">Live Session</field>
+        <field name="action" ref="test_action"/>
+        <field name="groups_id" eval="[(6, 0, [ref('live_sessions.group_teacher'), ref('base.group_system')])]"/>
+    </record>
+
+
+    <menuitem
+        id="live_session_add_menu"
+        name="Add Session"
+        parent="live_session_root_menu"
+        action="live_session_action_add"/>
+    
+    <menuitem
+        id="live_session_request_menu"
+        name="Coach Requests"
+        parent="live_session_root_menu"
+        action="live_session_action_request"
+        groups="base.group_system"
+        />
+
+    
+
+    
+</odoo>

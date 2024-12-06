@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="tasklyft_navlogo" inherit_id="website.option_header_brand_logo">
+        <xpath expr="//a/span" position="replace">
+            <span>
+                <img src="/task_lyft/static/src/img/logo.jpg" width="95" height="40" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+            </span>
+        </xpath>
+    </template>
+
+    <record id="tasklyft_services_page_menu" model="website.menu">
+        <field name="name">Services</field>
+        <field name="url">/services</field>
+        <field name="page_id" ref="task_lyft.tasklyft_services_page" />
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">60</field>
+    </record>
+
+
+    <record id="tasklyft_service_page_menu" model="website.menu">
+        <field name="name">Create Service</field>
+        <field name="url">/CreateService</field>
+        <field name="page_id" ref="task_lyft.tasklyft_service_page" />
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">60</field>
+    </record>
+
+
+
+    <template id="disable_search_in_nav" inherit_id="website.layout">
+        <xpath expr="//ul[contains(@class, 'navbar-nav')]//t[@t-call='website.placeholder_header_search_box']" position="replace">
+        </xpath>
+    </template>
+
+
+    <template id="disable_phone_in_nav" inherit_id="website.layout">
+        <xpath expr="//ul[contains(@class, 'navbar-nav')]//t[@t-call='website.placeholder_header_text_element']" position="replace">
+        </xpath>
+    </template> 
+    <template id="change_button_in_nav" inherit_id="website.placeholder_header_call_to_action">
+        <xpath expr="//a[contains(@class, 'btn_cta')]" position="attributes">
+            <attribute name="style">background-color: #00bcd4 !important; border-color: #00bcd4 !important;</attribute>
+        </xpath>
+    </template>
+    
+    
+
+</odoo>
